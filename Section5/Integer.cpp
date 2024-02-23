@@ -1,24 +1,28 @@
 #include "Integer.h"
 #include <iostream>
 
+// Default constructor
 Integer::Integer()
 {
     std::cout << "Integer()" << std::endl;
     m_pInt = new int(0);
 }
 
+// Parameterized constructor
 Integer::Integer(int value)
 {
     std::cout << "Integer(int)" << std::endl;
     m_pInt = new int(value);
 }
 
+// Copy constructor
 Integer::Integer(const Integer &obj)
 {
     std::cout << "Integer(const Integer &)" << std::endl;
     m_pInt = new int(*obj.m_pInt);
 }
 
+// Move constructor
 Integer::Integer(Integer &&obj)             
 {       
     std::cout << "Integer(Integer &&)" << std::endl;
@@ -26,6 +30,7 @@ Integer::Integer(Integer &&obj)
     obj.m_pInt = nullptr;
 }
 
+// Copy assignment
 Integer &Integer::operator=(const Integer &obj)
 {
     std::cout << "operator=(const Integer& obj)" << std::endl;
@@ -37,6 +42,7 @@ Integer &Integer::operator=(const Integer &obj)
     return *this;
 }
 
+// Move assignment
 Integer &Integer::operator=(Integer &&obj)
 {
     std::cout << "operator=(Integer&& obj)" << std::endl;

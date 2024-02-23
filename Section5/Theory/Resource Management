@@ -27,3 +27,19 @@ For example, in case of destruction, the resource must be released to avoid leak
 * The compiler will synthezise the necessary functions
 
 !! Providin user-defined implementation of some functions will prevent the compiler from synthesizing others !!
+
+__________________________________________________________________________________________________________________
+Custom            |  Copy constructor  |  Copy Assignment  |  Move Constructor  | Move Assignment  | Destructor  |
+__________________________________________________________________________________________________________________
+Copy constructor  |      Custom        |      =default     |      =delete       |       =delete    |   =default  |
+__________________________________________________________________________________________________________________
+Copy assignment   |      =default      |      Custom       |      =delete       |       =delete    |   =default  |
+__________________________________________________________________________________________________________________
+Move constructor  |      =delete       |      =delete      |      Custom        |       =delete    |   =default  |
+__________________________________________________________________________________________________________________
+Move assignment   |      =delete       |      =delete      |      =delete       |       CUstom     |   =default  |
+__________________________________________________________________________________________________________________
+Destructor        |      =default      |      =default     |      =delete       |       =delete    |   Custom    |
+__________________________________________________________________________________________________________________
+None              |      =default      |      =default     |      =default      |       =default   |   =default  |
+__________________________________________________________________________________________________________________

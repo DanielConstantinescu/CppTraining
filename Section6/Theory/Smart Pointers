@@ -1,0 +1,26 @@
+# Smart Pointer #
+
+* An object that behaves like a pointer but automatically free the memory
+
+* C++ offers a possibility to use smart pointers by using the library <memory>
+
+#include <memory>
+
+# Unique Pointer #
+
+std::unique_ptr<Integer> p(new Integer);   => creating a unique pointer for object Integer, using what C++ provides
+
+!! We cannot copy an unique pointer but we can move it
+
+    p2(p); => Will not work because compiler does not allow it. It will warn us that we try to copy a deleted object
+
+* To move it, we can use std::move(p);
+
+# Shared Pointer #
+
+std::shared_ptr<Integer> p(new Integer);   => creating a shared pointer for object INteger, using what C++ provides
+
+* Shared pointer is used if you want to share a resource with other parts of the code.
+
+* It used an internal counter that increment every time it is shared. When a shared pointer is destroyed, the counter decrements and when
+it reaches 0, the memory is freed.
