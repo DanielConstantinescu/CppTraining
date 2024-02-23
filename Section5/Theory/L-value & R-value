@@ -1,0 +1,16 @@
+* L-values and R-values *
+
+# L-value #                                 # R-value #
+- has a name                                - does not have a name
+- all variables are L-value                 - R-value is a temporary value
+- can be assigned values                    - cannot be assigned values
+- some expressions return L-value           - some expressions return R-value
+- persist beyond the expression             - does not persist
+- functions that return by reference,       - functions that return by value, return R-value
+return L-value
+
+* R-value References *
+    - a reference created to a temporary
+    - represents a temporary
+    - created with && operator
+    - cannot point to L-values

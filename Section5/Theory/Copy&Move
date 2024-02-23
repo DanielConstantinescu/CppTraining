@@ -1,0 +1,6 @@
+# Copy & Move Semantics #
+
+* Copy *
+    - Is implemented through copy constructor
+    - Copy of the object state is created
+    - Useless in case copy is created from a temporary target

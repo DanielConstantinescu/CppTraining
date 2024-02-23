@@ -1,0 +1,43 @@
+* Object Oriented Programming *
+    - uses objects as fundamental building blocks, not algorithms
+    - program is created as a collection of objects
+    - every object is an instance of a class
+    - classes are united via inheritance relationship
+
+* Advantages *
+    - Decrease complexity of software system
+    - Makes code reusable
+
+* Main principles of OOP *
+    - Abstraction
+    - Encapsulation
+    - Inheritance
+    - Polymorphism
+
+* Abstraction (How the object is defined) *
+    - Focuses on important and necessary details (unwanted features are left out)
+    - Help focus on important characteristics (for example a Person can be represented trough Name, without any other details)
+    - Represented through a class, struct, interface, union or enum
+
+* Encapsulation (How the object is internally implemented) *
+    - Hides the implementation details of a class
+    - Class provides behaviour without revealing the implementation
+    - The internal implementation can be changed without users' knowledge
+
+* Inheritance (How classes are related)
+    - Represents hierarchy of classes (classes are related trough "is-a" relationship)
+    - Relation between classes implies similar behaviours
+    - The behaviour and how it is implemented are inherited by the children from the parent
+    - THe child class can reuse the inherited behaviour with the same implementation or provide a different one
+
+* Polymorphism * (How different classes implement the same behaviour)
+    - Represents common behaviour but with different implementations
+    - Response is different, either based on object's class or the arguments
+    - Implemented trough function overloading, templates or virtual functions
+
+* Class *
+    - Represents a blueprint or template
+    - Represents an abstraction
+    - An object represents an instance of a class
+    - Each class can have multiple instances
+    - Objects are independent

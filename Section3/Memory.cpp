@@ -15,6 +15,11 @@
     - realloc => allocates larger chunk of memory for an existing allocation
     - free => deallocates/releases the memory allocated trough the above functions */
 
+/* ! Important ! 
+
+Stack memory is a sort of memory allocation that the OS continuously uses to store variables in a Last In First Out order. 
+Heap memory type is a type of dynamic memory allocation used for storing objects and structures that require a longer lifespan than stack memory */
+
 void Malloc() {
     int *p = (int*)malloc(5 * sizeof(int));
 
@@ -46,7 +51,7 @@ void NewArrays() {
     int *p = new int[5]{1,2,3,4,5}; // allocate memory for 5 integers ; If we also initialize it, it will be initialized in the memory as soon as it is
                                     // allocated
     //for (int i = 0; i < 5; ++i) {
-     //   p[i] = i;
+     //   p[i] = i;                 // Longer form of the one liner above
    // }
 
     delete []p;    // In this form we free memory for the whole array
@@ -54,7 +59,7 @@ void NewArrays() {
 
 void Strings() {
     char *p = new char[4];  // Every time we allocate memory for strings, allocate 1 extra byte for the end character
-    strcpy(p, "C++");
+    strcpy(p, "C++");       // A string of 3 (three bytes) + 1 byte for the string end character
     std::cout << p << std::endl;
     delete []p;
 }

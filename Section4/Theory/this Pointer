@@ -1,0 +1,7 @@
+
+* "this" Pointer *
+    - a hidden pointer passed to member function
+    - points to the object that called the member function
+    - a keyword meaningful only in member function
+
+! It is constant so we cannot assign any address to this pointer

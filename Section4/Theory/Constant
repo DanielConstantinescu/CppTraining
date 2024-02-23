@@ -1,0 +1,6 @@
+* Constant Member Function *
+    - Member functions qualified with const keyword
+    - Both declaration and definition qualified
+    - Cannot change value of any member variable
+    - Used for creating read-only functions
+    - Constant objects can invoke only constant member functions

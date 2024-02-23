@@ -1,0 +1,13 @@
+* Copy Constructor *
+    - used to create copies of an object' state in another object
+    - if not provided, compiler will synthezise in automatically
+    - default implementation just copies the values
+    - user-defined implementation required for pointer members
+
+* Rule of 3 *
+    ! This rules says that if a user implemented any of the following functions, it should implement all the other functions !
+        - Destructor
+        - Copy constructor
+        - Copy assignment operator
+
+!! Not implementing user defined operations can lead to memory leak or shallow copy

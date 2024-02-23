@@ -1,0 +1,29 @@
+# Resource Management #
+
+* Some classes own a resource (pointer, file handle, socket etc)
+
+* We have to decide the action in case objects of such classes are copied, moved or destroyed.
+For example, in case of destruction, the resource must be released to avoid leaks.
+
+* Similarly, on copy or move the resource must be handled accordingly.
+
+# Rule of 5 #
+
+* Rule of 5 is implemented for classes that own a resource.
+
+* If a class has such semantics, we must provide a user-defined:
+    - Destructor; (for example, we must make sure to release the resource)
+    - Copy constructor; (for examample, we must make sure to allocate new memory first and then copy the data)
+    - Copy assignment operator; (similar to copy ; will be discussed in operator overloading)
+    - Move constructor; (for example, we must make sure to move the resource o the destination)
+    - Move assignment operator;
+
+* Used to ensure proper handling of such resources
+
+# Rule of 0 #
+
+* If a class does not have ownership semantics, then do not provide any user defined function from the rule of 5.
+
+* The compiler will synthezise the necessary functions
+
+!! Providin user-defined implementation of some functions will prevent the compiler from synthesizing others !!

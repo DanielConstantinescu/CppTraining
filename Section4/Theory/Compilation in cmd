@@ -1,0 +1,7 @@
+In the case we have an Class.h file (the header/declaration), a Class.cpp file (the implementation) and a main.cpp file (main program) we compile
+using these commands:
+
+
+g++ -c Class.cpp            // First thing first we compile the class file(s)
+g++ -c main.cpp             // Last thing compiled is the program with the main function in it.
+g++ -o App main.o Class.o   // We create an executable linking together the main programm and the compiled classes

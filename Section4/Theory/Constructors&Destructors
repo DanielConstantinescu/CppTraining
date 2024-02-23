@@ -1,0 +1,41 @@
+* Constructor *
+    - invoked automatically when an object is instanced
+    - used for initialization
+    - don't return anything
+    - can be overloaded
+
+* Types of constructors *
+    - default
+    - parameterized
+    - copy
+    - delegating
+    - inheriting
+
+* Default *
+    - no arguments
+
+            Example call: Car c;
+
+    - is automatically called by the compiler when there are no user contructors defined
+
+* Parameterized Constructor *
+    - accepts arguments
+    - initialize the object with user-defined values
+    - never synthesized by the compiler
+    - blocks auto generation of default constructor
+
+* Destructor *
+    - function invoked when an  object is destroyed
+    - used for releasing resources allocated in the constructor
+    - a class can have only 1 destructor and it cannot be overloaded
+    - no arguments
+
+* Non-Static Data Member Initializers *
+    - when you initialize a class variable in the class declaration itself, without the use of a constructor
+    - using this method, we ensure the members are initialized with valid values
+    - compiler automatically generates initialization code
+
+* Delegating Constructor *
+    - allows a constructor to invoke another constructor
+    - replacement for common initialization
+    - reduces duplicate initialization code in multiple constructors

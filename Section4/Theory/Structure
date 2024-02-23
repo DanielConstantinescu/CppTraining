@@ -1,0 +1,6 @@
+* Structure *
+    - creates a used-define type through keyword "struct"
+    - similar to a class
+    - the main difference is that for a structure the default access is public, while for a class is private
+
+

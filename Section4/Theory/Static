@@ -1,0 +1,16 @@
+* Static Member Variable *
+    - Member variables qualified with static keyword
+    - Not part of the object, but they are part of the class
+    - Only one copy exists and is shared between objects
+
+* Rules of usage *
+    - are only declared inside the class.
+    - have to be defined outside the class for initialization
+
+* Static Member Functions *
+    - functions qualified with static keyword
+    - required only in declaration
+    - belongs to class and not to objects
+    - do not receive "this" pointer
+
+!! Static Member Functions cannot access non-static members of the class !!
