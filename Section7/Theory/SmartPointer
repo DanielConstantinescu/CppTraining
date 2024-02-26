@@ -1,0 +1,21 @@
+# Smart Pointer #
+
+# unique pointer #
+
+* Used when the underlined pointer doesn't have to be shared with toher parts of the code
+
+* We will have to include <memory> ; #include <memory>
+
+* Used with: std::unique_ptr<type> p;
+
+* reset => use to allocate new memory
+
+        p.reset(new <type>{value});
+
+* get => use to get the underline pointer. Used to pass the pointer as argument for functions that do not accept an unique pointer
+
+        Display(p.get());      // Where Display is void Display (Integer *p)
+
+* Cannot be copied, but we can use std::move; to move it and use as an argument for a function.
+
+        Store(std::move(p));   // Where Store is void Store(std::unique_ptr<Integer> p)

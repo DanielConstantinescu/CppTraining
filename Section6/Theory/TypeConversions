@@ -1,0 +1,46 @@
+# Type Conversions #
+
+* Conversion between types
+
+* Performed through casts
+
+* Ordered by compiler (implicit) or user (explicit)
+
+* Explicit conversion uses casting operators
+
+* Conversion between:
+        - basic & basic
+        - basic & user-defined
+        - user-defined & basic
+        - user-defined & user-defined
+
+# static cast #
+
+* C++ provides a static cast which is superior to C-style casting because it checks if the cast is valid or not.
+
+* Used with: static_cast<type>(expression).
+
+
+# reinterpret_cast #
+
+* Reinterpret cast will cast between two types even if they are not related.
+
+* The difference between reinterpret cast and C-style cast is that, if there are any qualifiers on the source, reinterpret cast will not discard them while
+C-style cast will discard them.
+
+* Used with: reinterpret_cast<type>(expression).
+
+# const cast #
+
+* For constants
+
+* Used with: const_cast<type>(expression)
+
+
+!! C-STYLE CAST SHOULD BE AVOIDED IN C++
+
+# Type Conversion Operator #
+
+* Used with: operator<type>();           No arguments, no return type
+
+!! ASSIGNMENTS USE MORE FUNCTIONS CALLS THAN INITIALIZATION SO IT IS PREFERED TO USE INITIALIZATION
