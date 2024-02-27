@@ -2,7 +2,7 @@
 
 # unique pointer #
 
-* Used when the underlined pointer doesn't have to be shared with toher parts of the code
+* Used when the underlined pointer doesn't have to be shared with other parts of the code
 
 * We will have to include <memory> ; #include <memory>
 
@@ -19,3 +19,52 @@
 * Cannot be copied, but we can use std::move; to move it and use as an argument for a function.
 
         Store(std::move(p));   // Where Store is void Store(std::unique_ptr<Integer> p)
+
+
+# shared pointer #
+
+* Shared pointer supports copy.
+
+* Shared pointers keep track with its copies. The internal counter increments each time a copy is created and decrements when a shared pointer object is destroyed. When the counter gets to 0, the the internal pointer is deleted.
+
+* Used with:       std::shared_ptr<type> prj;
+
+* To check internal counter:          prj.use_count();
+
+* Contains the same methods as an unique pointer;
+
+# weak pointer #
+
+* Weak pointer points to the control block of the shared pointer.
+
+* The resources for the control block will remain until the weak pointer is released.
+
+* expired() interrogates the control block and if the counter is 0, it returns true. Else, it returns false, which indicates a shared pointer still exists.
+
+* If a shared pointer still exists, we can acces the underline pointer trough the weak pointer. To do this, we will invoke the function
+lock().
+
+* When lock is called, it increments the counter by 1 and return a shared pointer.
+
+* After we are done with the shared pointer, it will decrement the counter in its destructor.
+
+# deleter #
+
+* Smart pointers does not invoke delete directly, instead they call de deleter that frees the memory.
+
+* If we want to free any kind of resource, we can specify our own deleter.
+
+* Deleter can be defined as gobal function, lambda expression or any other form.
+
+* For shared pointers, the type of the deleter must not be specified.
+
+# make functions #
+
+* We can construct smart pointers without manually allocate memory for the inline functions. THese global functions are called make functions.
+
+* make_unique is the function used to create the object of the class and return that unique pointer.
+        Ex: auto p = make_unique<int>(5);
+
+* make_shared is the function used to create and return a shared pointer.
+
+!! When we manually create a shared pointer, we use new once for the pointer and then the pointer will use one more new to allocte resource for the control block. By using make_shared, a single new will be used that will allocate resources for both the underline pointer and the control block !!

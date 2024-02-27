@@ -1,0 +1,43 @@
+# Strings #
+
+* We must remind to allocate 1 byte for the null dominator in strings, the end character. If we forget to do that, it will cause buffer overflow
+
+* C++ offers a class String and a lot of function for working on strings and for allocation and deallocation of resources.
+
+* We must #include <string>
+
+* Declare:
+ std::string s;
+
+* Initialize:
+ s = "Hello";
+
+ * Read a line:
+ std::getline(std::cin, s);
+
+ * Get size:
+ s.length();    // Faster than classic method because String class caches length.
+
+ * Insert:
+ s.insert(i, s1)   // i is the position where s1 will be insert
+
+ * Concatenate:
+ s = s1 + s2;   // we use + operator
+
+ * Comparison:
+ s1 == s2
+ s1 != s2
+
+ We use basic comparison operators.
+
+ * Remove:
+
+ s.erase() and s.clear() will clear the string
+
+ s.erase(0, 5) will clear the first 5 characters starting with position 0
+
+ * Search:
+
+ auto pos = s.find("word", 0);    First argument represents what we are looking for and the second argument the starting position
+
+ find() returns the position where substring was found. If it is not found, return a constant std::string::npos (which is -1).

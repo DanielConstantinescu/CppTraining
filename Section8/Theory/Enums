@@ -1,0 +1,32 @@
+# Enumerated TYpe #
+
+* A type created through enum keyword.
+
+* CReated with restricted range of values, called symbolic constants or enumerators.
+
+* Enumerators are internally represented as undefined integral types.
+
+* Can implicitly convert to an integer but not the other way around.
+
+* Default value starts from 0, but users can assign any value.
+
+* Enumerators are defined in the scope in which they were defined.
+
+enum Color{Red, Green, Blue};
+Color c = Red;
+c = 1;  // Compiler error, use static_cast to convert
+int x = Green;  // x will contain 1
+
+* class keyword allows us to create scoped enums
+
+enum class Color{RED, GREEN, BLUE};
+
+* To use scoped enumerators we need to refer them trough the whole name
+
+Color::RED
+Color::GREEN
+Color::BLUE
+
+* The default underline type for scoped enums is int but we can specify another type
+
+enum class TrafficLight : char{RED, GREEN, YELLOW};
