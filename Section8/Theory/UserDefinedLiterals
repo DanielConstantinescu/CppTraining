@@ -1,0 +1,36 @@
+# C++ Literals #
+
+* A literal is a fixed value that appears directly in the code.
+
+* Some of the C++ literals can be modified through prefixes or suffixes.
+
+Ex: 14u, 621l, 9.2f
+
+# User-Defined literals #
+
+* In c++ we can define our own suffixes
+
+* Creating custom literals provides syntactic shortcuts and increase type safety
+
+Temperature temp {82.5};       // Fahrenheit or celsius??
+Temperature temp {82.5_F};     // Use custom literal to convert
+
+* Syntax:
+
+<return type> operator ""_<literal>(<arguments>)
+
+- operator "" -> defines a iteral operator function
+
+- <return type> -> can be any type, including void
+
+- _<literal> -> always starts with _ followed by a name
+
+- <arguments> -> can be integer, float, char or string
+
+# IMPORTANT POINTS #
+
+* Custom literals should begin with _ .
+
+* You cannot redefine the meaning of built-in literal suffixes.
+
+* Only following types can be suffixed to make a user-defined literal: unsigned long long, long double, const char *, char

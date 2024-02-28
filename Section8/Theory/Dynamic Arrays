@@ -1,0 +1,33 @@
+# Dynamic Arrays #
+
+* Used trough the vector class provided by the standard library.
+
+#include <vector>
+
+* It is a class, so it can hold most of the types.
+
+std::vector<int> data {1,2,3};
+
+* It automatically manage resources
+
+* push_back() -> add an element
+
+data.push_back(4);
+
+* size() -> returns the size
+d
+ata.size();
+
+* Elements can be accessed and modified like normal arrays, using [<position>]
+
+* Vectors are ranges so we can loop them like this:
+
+for(auto x : data) {
+
+}
+
+* It is a container so we can use iterators and their methods (begin, end etc) like in the case of Initializer Lists.
+
+* erase(<iterator>) -> deletes an element from a given position
+
+* insert(<iterator>,<vaue>)  -> inserts the value at the given location

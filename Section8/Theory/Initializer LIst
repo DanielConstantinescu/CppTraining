@@ -1,0 +1,17 @@
+# Initializer List #
+
+* Used with #include <initializer_list>;
+
+* We must specify the type:
+std::initializer_list<int> data = {1,2,3,4};
+
+* begin() and end() get the begining and the end iterators of an initializer list
+
+* size() get the size of the list
+
+* Provides access to its elements through iterators. To acces the value from the current iterator, we use *
+Ex:
+int i = value.begin();
+*i
+
+* Will be constructed automatically from a braced list of elements like {1, 2, 3, 4}

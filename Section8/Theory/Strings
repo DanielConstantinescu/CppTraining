@@ -41,3 +41,38 @@
  auto pos = s.find("word", 0);    First argument represents what we are looking for and the second argument the starting position
 
  find() returns the position where substring was found. If it is not found, return a constant std::string::npos (which is -1).
+
+ # to_string and other functions #
+
+ * to_string -> C++ function that converts other types to string
+
+ std::string s = to_string(24);
+
+ * C++ also offers functions that convert strings into other types
+
+ int x = std::stoi("54");     // stoi stand for String to Integer
+
+ # String Streams #
+
+ * Similar to iostreams, but instead of reading from the input and writing on the autput, we perform this on a string buffer.
+
+ * We need to #include <sstream>;
+
+ * There are 3 classes we can use:
+
+    - std::stringstream   -> provides both insertion and extraction operators from a string; we can both read from the stringstream and write to it
+
+    - std::istringstream  -> provides only extraction operators ; we can only read from it
+
+    - std::ostringstream  -> provides only insertion operators ; we can only write in it
+
+* str()  -> can be used to convert the string buffer to a string or to assign a string to the buffer
+
+std::stringstream ss;
+
+std::string s = sb.str();
+ss.str("");
+
+* fail()  -> this function is used to check when there is nothing to read anymore in a string stream
+
+while (!ss.fail())     // means "as long as there is something to read"
