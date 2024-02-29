@@ -1,0 +1,54 @@
+### Access Modifiers ###
+
+Example:
+
+class Base {}
+private:
+    MemberA          // Inaccessible outside the class ; accessible only to the members of the class
+
+public: 
+    MemberB          // Accessible outside the class
+
+protected:
+    MemberC          // Accessible only to the class and the child classes.
+};
+
+### public ###
+
+class Child : public Base {       // For public access modifier, all the members are inherited exactly how they are defined in the Base class
+private:                          // Even if the MemberA was inherited, it will not be available in the Child class.
+    MemberA                       // Class Child can use only MemberB and MemberC.  
+
+public:
+    MemberB
+
+protected:
+    MemberC
+}
+
+
+### private ###
+
+class Child : private Base {       // For private access modifier, all the members are inherited as private
+private:                           // What was private in the Base will not be accessible, but others will
+    MemberA                        // In this case only MemberB and MemberC can be inherited
+
+private:
+    MemberB
+
+private:
+    MemberC
+}
+
+### protected ###
+
+class Child : private Base {       // For protected access modifier, all protected and public members of the base are inherited as protected
+private:                           // What was private in the Base will not be accessible, but others will
+    MemberA                        // In this case only MemberB and MemberC can be inherited
+
+protected:
+    MemberB
+
+protected:
+    MemberC
+}

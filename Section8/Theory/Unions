@@ -1,0 +1,31 @@
+# Unions in C++ #
+
+* Gives the ability to represent all members in the same memory. The size of the union will be equal to the size of the largest member
+
+Example:
+union Test {
+    int x;
+    char ch;
+}
+
+In this case, the size of the union is the size of int.
+
+* Due to this, we can save space.
+
+* But also has some disadvantages
+
+    1) no way to know which type it holds
+
+    2) if a nested member has a non-default constructor, this deletes the default constructor of the union
+
+    3) if a union has a user-defined tye as a member, then we cannot directly assign or initialize it
+
+    4) user-defined types are not destroyed implicitly
+
+    5) a union cannot has a base class
+
+    6) cannot inherit from an union
+
+* By default, the members of a union is public, just like the structure
+
+

@@ -1,0 +1,9 @@
+### Banking Application ###
+
+* Manage accounts.
+
+* Customers can perform common operations.
+
+* Bank can perform administrative tasks.
+
+Represent account through Account class.

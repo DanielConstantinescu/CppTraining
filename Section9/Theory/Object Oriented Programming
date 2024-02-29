@@ -1,0 +1,41 @@
+# Object Oriented Programming #
+
+* System is made up of objects.
+
+* Each object is instance of a class.
+
+* Classes & objects are related.
+
+* Collaboration between objects.
+
+* Define the behaviour of the system.
+
+# Composition #
+
+* Object composed in another object.
+
+* Represents "has-a" relation
+
+* Reused behavior.
+
+# Inheritance #
+
+* Class inherits the features of another class.
+
+* The child class can reuse and inherit the behavior of the parent.
+
+* Represents "is-a" relationship.
+
+* Syntax:
+class <child class> : <access modifier> <base class>      // Access modifier is optional
+
+Ex:
+class Dog : public Animal
+
+* When the child class reimplements a function of the base class with the same name, then the child class will hide the implementation of the base for that
+function.
+
+* Object construction in inheritance:
+    - constructors executed from base to child.
+
+    - destructors execute from child to base.
