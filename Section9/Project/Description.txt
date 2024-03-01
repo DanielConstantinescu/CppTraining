@@ -6,4 +6,5 @@
 
 * Bank can perform administrative tasks.
 
-Represent account through Account class.
+* Represent account through Account class. Will contain the common implementation for all account types.
+

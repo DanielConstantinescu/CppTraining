@@ -1,0 +1,52 @@
+# Inheritance #
+
+* Class inherits the features of another class.
+
+* The child class can reuse and inherit the behavior of the parent.
+
+* Represents "is-a" relationship.
+
+* Syntax:
+class <child class> : <access modifier> <base class>      // Access modifier is optional
+
+Ex:
+class Dog : public Animal
+
+* When the child class reimplements a function of the base class with the same name, then the child class will hide the implementation of the base for that
+function.
+
+* Object construction in inheritance:
+    - constructors executed from base to child.
+
+    - destructors execute from child to base.
+
+* In C++ there are 3 member function that are not inherited: 
+    - constructors
+    - destructors
+    - assign operator
+
+* It is possible to inherit constructors with "using keyword"
+
+Ex: Checking class inherit Account
+
+using Account::Account   -> this will let us inherit all constructors (members with name Account) from Account class.
+
+* !! A base class represents all its child classes. If we send a pointer to a base class object, it can point to any child class objects as well.
+
+* virtual -> if we specify virtual for a function in the base class, it means that function will be implemented by a child class. This way the compiler will
+             know to look for the correct function in the child classes
+
+!! The base class should always have a virtual destructor.
+
+* final  -> a class that is final cannot be inherited ; cannot be used as a base class.
+
+Ex: class Zip final {
+    ..........
+}
+
+* override  -> a keyword used to indicate the compiler that a function override a function from the base class. This keyword returns an error if the function
+               that overrides is not the same as the one from the base class or if the function from the base class does not have "virtual" keyword
+
+!! It is good practice to use the override specifier when we override a base class function
+
+* override specifier can take an aditional final specifier to mark that the function won't be further overriden

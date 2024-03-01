@@ -1,0 +1,15 @@
+# Polymorphism #
+
+* Different forms of the function are provided.
+
+* The call is resolved at compile time or runtime.
+
+* Runtime polymorphism or dynamic binding.
+
+* Implemented through virtual mechanism.
+
+* Compiler inserts code to invoke the correct function at runtime.
+
+* Automatically generated through the virtual keyword.
+
+* Polymorphic functions  -> functions defined with "virtual" keyword and are invoked through a pointer or reference.
