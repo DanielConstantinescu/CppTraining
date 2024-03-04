@@ -1,0 +1,11 @@
+# Dynamic cast #
+
+* Dynamic cast checks if the cast can be done. If it can, it will return a pointer cast to the child class. If not, it will return nullptr.
+
+Ex:
+    Checking *pChecking = dynamic_cast<Checking*>(pAccount);
+    if (pChecking != nullptr) {
+        std::cout << "Minimum balance: " << pChecking->GetMinimumBalance() << std::endl;
+    }
+
+* Dynamic cast also work on references, not pointers. In this case, if it fails, it will throw an exception.

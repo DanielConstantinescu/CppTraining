@@ -1,0 +1,14 @@
+# typeid #
+
+* To use it we must #include <typeinfo>
+
+* We use typeid to get the type of an object/variable.
+
+Example:
+
+int i{};
+const std::type_info &ti = typeid(i);
+
+* name()  -> print the name of the type
+
+std::cout << ti.name() << std::endl;

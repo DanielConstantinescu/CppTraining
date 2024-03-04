@@ -1,0 +1,25 @@
+# Abstract Class #
+
+* An abstract class has at least one pure virtual function.
+
+* Can contain other members (dat, non-virtual functions etc).
+
+* Cannot be instantiated, but can be used through a pointer or reference.
+
+* Established a contract with a clients. It forces the child classes to provide implementation.
+
+* Used for creating interfaces (an interface contains only pure virtual functions and no other members).
+
+# Pure Virtual Function #
+
+* Virtual function marked with = 0
+
+Ex: virtual void Serialize(float version) = 0;
+
+* Does not have an implementation (optional).
+
+* Cannot be invoked (except by derived classes if defined).
+
+* No entry in the vtable.
+
+* Must be overridden by the derived classes. If not, the child classes will also become abstract classes.
