@@ -1,9 +1,9 @@
 #pragma once
 
-enum class Fuel {PETROL, DIESEL, ELECTRIC, LPG};
-enum class Body {SEDAN, SPORT, HATCHBACK, CONVERTIBLE, MINIVAN};
-enum class Traction {BRAKE, TYRE, ANTILOCK};
-enum class Equipment {FULL, BASIC, CUSTOM};
+enum class Fuel {DEFAULT = 0, PETROL, DIESEL, ELECTRIC, LPG};
+enum class Body {DEFAULT = 0, SEDAN, SPORT, HATCHBACK, CONVERTIBLE, MINIVAN};
+enum class Traction {DEFAULT = 0, BRAKE, TYRE, ANTILOCK};
+enum class Equipment {DEFAULT = 0, FULL, BASIC, CUSTOM};
 
 
 
@@ -15,7 +15,7 @@ protected:
     Traction m_TractionType;
     int m_Power;
     Equipment m_EquipmentType;
-    int* m_VIN;
+    int *m_VIN;
 public:
     virtual float GetFuelLevel()const = 0;
     virtual void fuelCar(float fuel) = 0;

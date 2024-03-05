@@ -1,25 +1,25 @@
 #pragma once
 #include "Vehicle.h"
 
-class Electric : public Vehicle {
+class Petroleum : public Vehicle {
 protected:
     // Parameterized constructor
-    Electric(float fuellevel, Body bodytype, int power, Equipment equipmenttype, int ID);
+    Petroleum(float fuellevel, Fuel fueltype, Body bodytype, int power, Equipment equipmenttype, int ID);
 
     // Copy constructor
-    Electric (const Electric &obj);
+    Petroleum (const Petroleum &obj);
 
     // Move constructor
-    Electric(Electric &&obj);
+    Petroleum(Petroleum &&obj);
 
     // Copy assignment
-    Electric & operator=(const Electric &obj);
+    Petroleum & operator=(const Petroleum &obj);
 
     // Move assignment
-    Electric & operator=(Electric &&obj);
+    Petroleum & operator=(Petroleum &&obj);
 
     // Destructor
-    ~Electric();
+    ~Petroleum();
 
 public:
     virtual float GetFuelLevel()const;
@@ -30,6 +30,4 @@ public:
     virtual int GetHP()const;
     virtual Equipment GetEquipmentType()const;
     virtual int* Identify()const;
-
-
 };

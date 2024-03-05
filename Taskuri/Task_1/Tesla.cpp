@@ -1,47 +1,31 @@
+#include "Tesla.h"
 #include "Electric.h"
-#include "Vehicle.h"
 #include <iostream>
 
-//Parameterized constructor
-Electric::Electric(float fuellevel, 
-                   Body bodytype,  
-                   int power, 
-                   Equipment equipmenttype,
-                   int ID)
-
+// Parameterized constructor
+Tesla::Tesla(float fuellevel, Body bodytype, int power, Equipment equipmenttype, int ID) : 
+        Electric(fuellevel, bodytype, power, equipmenttype, ID) 
 {
-    m_FuelLevel = fuellevel;
-    m_FuelType = Fuel::ELECTRIC;
-    m_BodyType = bodytype;
-    m_TractionType = Traction::BRAKE;
-    m_Power = 1000;
-    m_EquipmentType = equipmenttype;
-    m_VIN = new int(ID);
+    std::cout << "Tesla(float, Body, int, Equipment, int)" << std::endl;
 }
 
 // Copy constructor
-Electric::Electric(const Electric &obj)
+Tesla::Tesla(const Tesla& obj) : Tesla(obj.m_FuelLevel,
+                                       obj.m_BodyType,
+                                       obj.m_Power,
+                                       obj.m_EquipmentType,
+                                       *obj.m_VIN)
 {
-    m_FuelLevel = obj.m_FuelLevel;
-    m_FuelType = Fuel::ELECTRIC;
-    m_BodyType = obj.m_BodyType;
-    m_TractionType = obj.m_TractionType;
-    m_Power = obj.m_Power;
-    m_EquipmentType = obj.m_EquipmentType;
-    m_VIN = new int(*obj.m_VIN);
+    std::cout << "Tesla(Tesla &)" << std::endl;
 }
 
 // Move constructor
-Electric::Electric(Electric &&obj)
+Tesla::Tesla(Tesla &&obj) : Tesla(obj.m_FuelLevel,
+                                       obj.m_BodyType,
+                                       obj.m_Power,
+                                       obj.m_EquipmentType,
+                                       *obj.m_VIN)
 {
-    // Moving from source to destination
-    m_FuelLevel = obj.m_FuelLevel;
-    m_FuelType = Fuel::ELECTRIC;
-    m_BodyType = obj.m_BodyType;
-    m_TractionType = obj.m_TractionType;
-    m_Power = obj.m_Power;
-    m_EquipmentType = obj.m_EquipmentType;
-    m_VIN = new int(*obj.m_VIN);
 
     // Clear resources from source
     obj.m_FuelLevel = 0;
@@ -51,10 +35,11 @@ Electric::Electric(Electric &&obj)
     obj.m_Power = 0;
     obj.m_EquipmentType = Equipment::DEFAULT;
     obj.m_VIN = nullptr;
+    std::cout << "Tesla(Tesla &&)" << std::endl;
 }
 
 // Copy assignment
-Electric &Electric::operator=(const Electric &obj)
+Tesla &Tesla::operator=(const Tesla &obj)
 {
     if (this != &obj) {
         m_FuelLevel = obj.m_FuelLevel;
@@ -67,12 +52,14 @@ Electric &Electric::operator=(const Electric &obj)
         delete m_VIN;
         m_VIN = new int(*obj.m_VIN);
     }
+    std::cout << "Tesla =(Tesla &)" << std::endl;
+
 
     return *this;
 }
 
 // Move assignment
-Electric &Electric::operator=(Electric &&obj)
+Tesla &Tesla::operator=(Tesla &&obj)
 {
     if (this != &obj) {
         // Move object
@@ -95,52 +82,55 @@ Electric &Electric::operator=(Electric &&obj)
         obj.m_EquipmentType = Equipment::DEFAULT;
         obj.m_VIN = nullptr;
     }
+    std::cout << "Tesla (Tesla &&)" << std::endl;
+
 
     return *this;
-    
 }
 
-float Electric::GetFuelLevel() const
+float Tesla::GetFuelLevel() const
 {
     return m_FuelLevel;
 }
 
-void Electric::fuelCar(float fuel)
+void Tesla::fuelCar(float fuel)
 {
+    std::cout << "Tesla Charging!" << std::endl;
     m_FuelLevel += fuel;
 }
 
-Fuel Electric::GetFuelType() const
+Fuel Tesla::GetFuelType() const
 {
     return Fuel::ELECTRIC;
 }
 
-Body Electric::GetBodyType() const
+Body Tesla::GetBodyType() const
 {
     return m_BodyType;
 }
 
-Traction Electric::GetTractionType() const
+Traction Tesla::GetTractionType() const
 {
     return m_TractionType;
 }
 
-int Electric::GetHP() const
+int Tesla::GetHP() const
 {
     return m_Power;
 }
 
-Equipment Electric::GetEquipmentType() const
+Equipment Tesla::GetEquipmentType() const
 {
     return m_EquipmentType;
 }
 
-int *Electric::Identify() const
+int *Tesla::Identify() const
 {
     return m_VIN;
 }
 
-Electric::~Electric()
+// Destructor
+Tesla::~Tesla()
 {
     free(m_VIN);
 }

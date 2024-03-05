@@ -1,42 +1,40 @@
-#include "Electric.h"
-#include "Vehicle.h"
+#include "Petroleum.h"
 #include <iostream>
 
-//Parameterized constructor
-Electric::Electric(float fuellevel, 
-                   Body bodytype,  
-                   int power, 
-                   Equipment equipmenttype,
-                   int ID)
-
+// Parameterized constructor
+Petroleum::Petroleum(float fuellevel, Fuel fueltype, Body bodytype, int power, Equipment equipmenttype, int ID)
 {
     m_FuelLevel = fuellevel;
-    m_FuelType = Fuel::ELECTRIC;
+    m_FuelType = fueltype;
     m_BodyType = bodytype;
     m_TractionType = Traction::BRAKE;
     m_Power = 1000;
     m_EquipmentType = equipmenttype;
     m_VIN = new int(ID);
+
+    std::cout << "Petroleum(float, Fuel, Body, int, Equipment, int)" << std::endl;
 }
 
 // Copy constructor
-Electric::Electric(const Electric &obj)
+Petroleum::Petroleum(const Petroleum &obj)
 {
     m_FuelLevel = obj.m_FuelLevel;
-    m_FuelType = Fuel::ELECTRIC;
+    m_FuelType = obj.m_FuelType;
     m_BodyType = obj.m_BodyType;
     m_TractionType = obj.m_TractionType;
     m_Power = obj.m_Power;
     m_EquipmentType = obj.m_EquipmentType;
     m_VIN = new int(*obj.m_VIN);
+
+    std::cout << "Petroleum(Petroleum &)" << std::endl;
 }
 
 // Move constructor
-Electric::Electric(Electric &&obj)
+Petroleum::Petroleum(Petroleum &&obj)
 {
     // Moving from source to destination
     m_FuelLevel = obj.m_FuelLevel;
-    m_FuelType = Fuel::ELECTRIC;
+    m_FuelType = obj.m_FuelType;
     m_BodyType = obj.m_BodyType;
     m_TractionType = obj.m_TractionType;
     m_Power = obj.m_Power;
@@ -51,10 +49,12 @@ Electric::Electric(Electric &&obj)
     obj.m_Power = 0;
     obj.m_EquipmentType = Equipment::DEFAULT;
     obj.m_VIN = nullptr;
+
+    std::cout << "Petroleum(Petroleum &&)" << std::endl;
 }
 
 // Copy assignment
-Electric &Electric::operator=(const Electric &obj)
+Petroleum &Petroleum::operator=(const Petroleum &obj)
 {
     if (this != &obj) {
         m_FuelLevel = obj.m_FuelLevel;
@@ -68,11 +68,13 @@ Electric &Electric::operator=(const Electric &obj)
         m_VIN = new int(*obj.m_VIN);
     }
 
+    std::cout << "Petroleum =(Petroleum &)" << std::endl;
+
     return *this;
 }
 
 // Move assignment
-Electric &Electric::operator=(Electric &&obj)
+Petroleum &Petroleum::operator=(Petroleum &&obj)
 {
     if (this != &obj) {
         // Move object
@@ -95,52 +97,53 @@ Electric &Electric::operator=(Electric &&obj)
         obj.m_EquipmentType = Equipment::DEFAULT;
         obj.m_VIN = nullptr;
     }
+    std::cout << "Petroleum =(Petroleum &&)" << std::endl;
 
     return *this;
-    
 }
 
-float Electric::GetFuelLevel() const
+float Petroleum::GetFuelLevel() const
 {
     return m_FuelLevel;
 }
 
-void Electric::fuelCar(float fuel)
+void Petroleum::fuelCar(float fuel)
 {
     m_FuelLevel += fuel;
 }
 
-Fuel Electric::GetFuelType() const
+Fuel Petroleum::GetFuelType() const
 {
-    return Fuel::ELECTRIC;
+    return m_FuelType;
 }
 
-Body Electric::GetBodyType() const
+Body Petroleum::GetBodyType() const
 {
     return m_BodyType;
 }
 
-Traction Electric::GetTractionType() const
+Traction Petroleum::GetTractionType() const
 {
     return m_TractionType;
 }
 
-int Electric::GetHP() const
+int Petroleum::GetHP() const
 {
     return m_Power;
 }
 
-Equipment Electric::GetEquipmentType() const
+Equipment Petroleum::GetEquipmentType() const
 {
     return m_EquipmentType;
 }
 
-int *Electric::Identify() const
+int *Petroleum::Identify() const
 {
     return m_VIN;
 }
 
-Electric::~Electric()
+Petroleum::~Petroleum()
 {
+    std::cout << "~Petroleum()" << std::endl;
     free(m_VIN);
 }
