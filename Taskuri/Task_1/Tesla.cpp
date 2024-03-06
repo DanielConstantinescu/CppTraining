@@ -132,5 +132,5 @@ int *Tesla::Identify() const
 // Destructor
 Tesla::~Tesla()
 {
-    free(m_VIN);
+    std::cout << "~Tesla()" << std::endl;
 }

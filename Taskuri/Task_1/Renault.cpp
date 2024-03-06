@@ -4,8 +4,12 @@
 
 // Parameterized constructor
 Renault::Renault(float fuellevel, Fuel fueltype, Body bodytype, int power, Equipment equipmenttype, int ID) :
-        Petroleum(fuellevel, fueltype, bodytype, power, equipmenttype, ID) {}
+        Petroleum(fuellevel, fueltype, bodytype, power, equipmenttype, ID) 
+{
+    std::cout << "Renault(float, Fuel, Body, int, Equipment, int)" <<std::endl;
+}
 
+// Copy constructor
 Renault::Renault(const Renault &obj) : Renault(obj.m_FuelLevel,
                                                 obj.m_FuelType,
                                                 obj.m_BodyType,
@@ -13,7 +17,7 @@ Renault::Renault(const Renault &obj) : Renault(obj.m_FuelLevel,
                                                 obj.m_EquipmentType,
                                                 *obj.m_VIN)
 {
-    std::cout << "Renault(float, Fuel, Body, int, Equipment, int)" << std::endl;
+    std::cout << "Renault(Renault&)" << std::endl;
 }
 
 // Move constructor
@@ -33,17 +37,6 @@ Renault::Renault(Renault &&obj) : Renault(obj.m_FuelLevel,
     obj.m_EquipmentType = Equipment::DEFAULT;
     obj.m_VIN = nullptr;
     std::cout << "Renault(Renault &&)" << std::endl;
-}
-
-// Copy constructor
-Renault::Renault(const Renault &obj) : Renault(obj.m_FuelLevel,
-                                                obj.m_FuelType,
-                                                obj.m_BodyType,
-                                                obj.m_Power,
-                                                obj.m_EquipmentType,
-                                                *obj.m_VIN)
-{
-    std::cout << "Renault(Renault &)" << std::endl;
 }
 
 // Copy assignment
@@ -139,5 +132,4 @@ int *Renault::Identify() const
 Renault::~Renault()
 {
     std::cout << "~Renault()" << std::endl;
-    free(m_VIN);
 }

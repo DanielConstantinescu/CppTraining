@@ -17,6 +17,9 @@ Electric::Electric(float fuellevel,
     m_Power = 1000;
     m_EquipmentType = equipmenttype;
     m_VIN = new int(ID);
+    
+    std::cout << "Electric(float, Body, int, Equipment, int)" << std::endl;
+
 }
 
 // Copy constructor
@@ -29,6 +32,9 @@ Electric::Electric(const Electric &obj)
     m_Power = obj.m_Power;
     m_EquipmentType = obj.m_EquipmentType;
     m_VIN = new int(*obj.m_VIN);
+
+    std::cout << "Electric(Electric &)" << std::endl;
+
 }
 
 // Move constructor
@@ -51,6 +57,9 @@ Electric::Electric(Electric &&obj)
     obj.m_Power = 0;
     obj.m_EquipmentType = Equipment::DEFAULT;
     obj.m_VIN = nullptr;
+
+    std::cout << "Electric(Electric &&)" << std::endl;
+
 }
 
 // Copy assignment
@@ -67,6 +76,7 @@ Electric &Electric::operator=(const Electric &obj)
         delete m_VIN;
         m_VIN = new int(*obj.m_VIN);
     }
+    std::cout << "Electric =(Electric &)" << std::endl;
 
     return *this;
 }
@@ -95,7 +105,7 @@ Electric &Electric::operator=(Electric &&obj)
         obj.m_EquipmentType = Equipment::DEFAULT;
         obj.m_VIN = nullptr;
     }
-
+    std::cout << "Electric =(Electric &&)" << std::endl;
     return *this;
     
 }
@@ -143,4 +153,5 @@ int *Electric::Identify() const
 Electric::~Electric()
 {
     free(m_VIN);
+    std::cout << "~Electric()" << std::endl;
 }

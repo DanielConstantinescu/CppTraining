@@ -2,7 +2,7 @@
 #include "Vehicle.h"
 
 class Petroleum : public Vehicle {
-protected:
+public:
     // Parameterized constructor
     Petroleum(float fuellevel, Fuel fueltype, Body bodytype, int power, Equipment equipmenttype, int ID);
 

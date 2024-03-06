@@ -2,7 +2,7 @@
 #include "Vehicle.h"
 
 class Electric : public Vehicle {
-protected:
+public:
     // Parameterized constructor
     Electric(float fuellevel, Body bodytype, int power, Equipment equipmenttype, int ID);
 
