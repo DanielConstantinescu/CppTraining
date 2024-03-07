@@ -152,6 +152,5 @@ int *Electric::Identify() const
 
 Electric::~Electric()
 {
-    free(m_VIN);
     std::cout << "~Electric()" << std::endl;
 }

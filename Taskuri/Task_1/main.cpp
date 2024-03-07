@@ -87,13 +87,33 @@ int main() {
    */
 
     /* Cazul 4: Testare clasa Utils si metodele din ea
-        Concluzie: Functia de print si calcul distanta functioneaza cum ar trebui */
+        Concluzie: Functia de print si calcul distanta functioneaza cum ar trebui
+    */
+    /*
     Renault car1(20.0, Fuel::PETROL, Body::HATCHBACK, 1000, Equipment::BASIC, 1);
     Petroleum car2 =(Petroleum)car1;
 
     Utils::Print(car2);
+    */
 
+    /* Cazul 5: Verificare Singleton Pattern din clasa Tesla 
+    Implementare: Folosim pointerul static instancePtr din clasa Tesla si metode getInstance care returneaza acest pointer (sau il creaza in caz ca este
+    prima apelare). In acest mod, folosind Singleton Design Pattern, ne aziguram ca utilizatorii nu pot apela direct constructorul (care era private).
+    De asemenea, copy constructorul si operatorul de assignment copy au fost instantiate cu delete pentru a nu putea fi folosite sau implementate.
 
+    In cazul de fata, desi am creat doua obiecte de tip Tesla unul dupa altul, se poate observa ca in terminal constructorul Tesla este apelat o singura data.
+    Dupa ce obiectul car1 este sters, a doua functie de Print a lui car2 are valori diferite fata de prima, dovada ca adresa la car car2 pointa s-a modificat.
+    */
+
+    Tesla* car1 = Tesla ::getInstance();
+    Tesla* car2 = Tesla ::getInstance();
+
+    Utils::Print(static_cast<Electric>(*car2));
+    std::cout << std::endl;
+
+    delete car1;
+
+    Utils::Print(static_cast<Electric>(*car2));
 
     return 0;
 }

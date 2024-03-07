@@ -2,22 +2,7 @@
 #include "Electric.h"
 #include <iostream>
 
-// Parameterized constructor
-Tesla::Tesla(float fuellevel, Body bodytype, int power, Equipment equipmenttype, int ID) : 
-        Electric(fuellevel, bodytype, power, equipmenttype, ID) 
-{
-    std::cout << "Tesla(float, Body, int, Equipment, int)" << std::endl;
-}
-
-// Copy constructor
-Tesla::Tesla(const Tesla& obj) : Tesla(obj.m_FuelLevel,
-                                       obj.m_BodyType,
-                                       obj.m_Power,
-                                       obj.m_EquipmentType,
-                                       *obj.m_VIN)
-{
-    std::cout << "Tesla(Tesla &)" << std::endl;
-}
+Tesla* Tesla::instancePtr = NULL;
 
 // Move constructor
 Tesla::Tesla(Tesla &&obj) : Tesla(obj.m_FuelLevel,
@@ -36,26 +21,6 @@ Tesla::Tesla(Tesla &&obj) : Tesla(obj.m_FuelLevel,
     obj.m_EquipmentType = Equipment::DEFAULT;
     obj.m_VIN = nullptr;
     std::cout << "Tesla(Tesla &&)" << std::endl;
-}
-
-// Copy assignment
-Tesla &Tesla::operator=(const Tesla &obj)
-{
-    if (this != &obj) {
-        m_FuelLevel = obj.m_FuelLevel;
-        m_FuelType = obj.m_FuelType;
-        m_BodyType = obj.m_BodyType;
-        m_TractionType = obj.m_TractionType;
-        m_Power = obj.m_Power;
-        m_EquipmentType = obj.m_EquipmentType;
-
-        delete m_VIN;
-        m_VIN = new int(*obj.m_VIN);
-    }
-    std::cout << "Tesla =(Tesla &)" << std::endl;
-
-
-    return *this;
 }
 
 // Move assignment
