@@ -1,0 +1,58 @@
+########################################
+######       SMART POINTERS       ######
+########################################
+
+* It is a wrapper class over a pointer.
+
+* It can deallocate resources by itself because it has a destructor and overloaded operators like * and ->.
+
+* Used from the library #include <memory>.
+
+### The weakness of raw/normal pointers ###
+
+* Memory Leaks: occurs when memory is allocated but it is not freed. Leads to excessive memory consumption.
+
+* Dangling Pointers: a pointer that occurs hwen an object is de-allocated from memory without modifying the value of the pointer.
+
+* Wild Pointers: pointers that are declared and allocated memory but the pointer is never initialized to point any valid object/memory.
+
+* Data Inconsistency: occurs when data is stored in memory but is not updated in a consistent manner.
+
+* Buffer Overflow: when a pointer is used to write data to an address that is outside of the allocated memory block.
+
+
+
+### UNIQUE POINTER ###
+
+* Used with: std::unique_ptr<type> p;
+
+* Unique pointer stores one pointer only. Used when the underlined pointer doesn't have to be shared with other parts of the code.
+
+* Does not allow copy, only move.
+
+
+
+### SHARED POINTER ###
+
+* Different from Unique Pointer because more than one pointer can point to this object at a time.
+
+* Used with std::shared_ptr<type> p;
+
+* Allows copy and keep track of its copies. The internal counter increments each time a copy is created and decrements when a shared pointer object 
+is destroyed. When the counter gets to 0, the the internal pointer is deleted.
+
+* We can check the internal counter with use_count();
+
+
+
+### WEAK POINTER ###
+
+* Weak pointer points to the control block of the shared pointer.
+
+* The resources for the control block will remain until the weak pointer is released.
+
+* If a shared pointer still exists, we can acces the underline pointer trough the weak pointer. To do this, we will invoke the function
+lock(). When lock is called, it increments the counter by 1 and return a shared pointer. After we are done with the shared pointer, it will 
+decrement the counter in its destructor.
+
+* expired() interrogates the control block and if the counter is 0, it returns true. Else, it returns false, which indicates a shared pointer still exists.
