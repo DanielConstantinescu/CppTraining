@@ -1,0 +1,48 @@
+###############################
+### SOLID Design Principles ###
+###############################
+
+* The SOLID name comes from the 5 principles:
+        - Single Responsibility Principle
+        - Open-Closed Principle
+        - Liskov Substitution Principle
+        - Interface Segregation Principle
+        - Dependency Inversion Principle
+
+
+### Single Responsibility Principle ###
+
+* The Single Responsibility Principle (SRP) is the idea that every class, module or function in a program should have one responsibility/purpose
+in a program. As a commonly used definition, "every class should have only one reason to change".
+
+
+### Open-Closed Principle ###
+
+* The Open-Closed Principle (OCP) states that software entities should be open for extension, but closed for modification. This implies that such
+entities (classes, functions and so on) should be created in a way that their core functionalities can be extended to other entities without altering
+the initial entity' source code.
+
+
+### Liskov Substitution Principle (LSP) ###
+
+* The Liskov substitution principle implies that when an instance of a class is passed/extended to another class, the inheriting class should
+have a use case for all the properties and behavior of the inherited class.
+
+* So, when you extend a class, if some of the properties of the initial class are not useful for the new class, the Liskov substitution principle
+has been violated.
+
+* The solution to this is simple: create interfaces that match the needs of the injeriting class.
+
+
+### Interface Segregation Principle (ISP) ###
+
+* The interface segregacion principle states that the interface of a program should be split in a way the user/client would only have access
+to the necessary methods related to their needs.
+
+
+### Dependency Inversion Principle ###
+
+* The dependency inversion principle states that:
+    1. High-level modules should not import anything from low-level modules. Both should depend on abstraction.
+
+    2. Abstractions should not depend on details. Details should depend on abstractions.
