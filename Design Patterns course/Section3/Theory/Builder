@@ -1,0 +1,25 @@
+###############
+### BUILDER ###
+###############
+
+### Motivation ###
+
+* Some objects are simple and can be created in a single constructor call.
+
+* Other objects require a lot of ceremony to create.
+
+* Having an object with many constructor arguments is not productive.
+
+* Instead, opt for piecewise construction.
+
+* Builder provides an API for constructing an object step-by-step.
+
+### Summary ###
+
+* A builder is a separate component for buildin an  object.
+
+* Can either give builder a construct or return via a static function.
+
+* To make builder fluent, return this.
+
+* Different facets of an object can be built with different builders working in tandem via a base class.
