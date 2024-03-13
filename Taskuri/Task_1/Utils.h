@@ -1,3 +1,4 @@
+// Task 1
 #include <iostream>
 #include "Electric.h"
 #include "Petroleum.h"

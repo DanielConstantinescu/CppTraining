@@ -1,3 +1,4 @@
+// Task 1
 #pragma once
 
 enum class Fuel {DEFAULT = 0, PETROL, DIESEL, ELECTRIC, LPG};
