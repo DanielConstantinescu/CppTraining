@@ -1,3 +1,5 @@
+# Task 1#
+
 Implementati o ierarhie de clase (fiecare clasa cu fisierul ei sursa) care sa includa o calsa abstracta care sa contina toate elementele necesare unui obiect de tip automobil(care sa contina minim informatii legate de: combustibil, caroserie, tractiune, putere, echipare, VIN number as a pointer) si diferite tipuri derivate de automobil in functie de caracteristicile fiecaruia
                                 Subtasks:
                                 1. Exemplificati in main ordinea apelarii constructorilor si destructorilor pentru clasele de baza si derivate
