@@ -1,0 +1,1 @@
+Task3: desig patterns: implement a Safe Singleton and a (Abstract) Factory.
