@@ -1,0 +1,28 @@
+###################
+### SHARED DATA ###
+###################
+
+* If we share a variable between threads, most probably both of them will modify it at the same time in a chaotic way and the result will be
+different from one run to another.
+
+
+### Mutex ###
+
+* Used with #include <mutex>
+
+* Used with lock() and unlock() to make sure that only the current thread is using the variable.
+
+
+### Lock Guard ###
+
+* The class lock_guard is a mutex wrapper that provides a convenient RAII-style mechanism for owning a mutex for the duration of a scoped block.
+
+* When a lock_guard object is created, it attempts to take ownership of the mutex it is given. 
+When control leaves the scope in which the lock_guard object was created, the lock_guard is destructed and the mutex is released.
+
+* The lock_guard class is non-copyable.
+
+
+### Unique Lock ###
+
+* Similar to lock guard but offers specific lock() and unlock() methods.

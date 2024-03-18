@@ -1,0 +1,9 @@
+######################
+### MULTITHREADING ###
+######################
+
+* When is multithreading useful?
+
+    1) When you're waiting for something external and want to execute code meanwhile. (asynchronous execution)
+
+    2) Distributing processing cross multiple cores (Example: calculating pi to lots of digits)
