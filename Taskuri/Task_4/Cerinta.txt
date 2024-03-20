@@ -1,0 +1,2 @@
+Task4: multithreading: implement a task that treats the value of an extern variable that is read, 
+modified and printed by 2 threads in parallel in a safe way.
