@@ -1,0 +1,3 @@
+Task5: 
+multiprocessing: exchange info between a server and a client process and print the modified values in each process in different files. 
+(use sockets and advance to shared memory as a second step).
