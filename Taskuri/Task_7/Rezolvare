@@ -1,0 +1,17 @@
+Pasii de rezolvare:
+
+1) Am adaugat in codul serverului si al clientului optiunea de scriere in fisier a timpului, pentru a fi mai usor de verificat daca porneste la startup.
+
+2) Am creat scriptul ce ruleaza serverul in background si mai apoi ruleaza clientul.
+
+3) Am creat in /etc/systemd/system serviciul task7.service (am adaugat o copie a fisierului si in repo pentru a i se putea verifica continutul)
+
+4) Am rulat comanda "sudo systemctl daemon-reload" pentru a da reload serviciilor
+
+5) Am rulat comanda "sudo systemctl enable task7.service" pentru a da enable noului serviciu
+
+6) Am rulat comanda "sudo systemctl start task7.service" pentru a imi porni serviciul
+
+7) Pentru a face debug am folosit comanda "systemctl status task7.service". Astfel am putut vedea erorirle
+
+8) Am folosit comanda "reboot" pentru a verifica scrierea in cele doua fisiere(client_file.txt si servel_file.txt) la startup.
