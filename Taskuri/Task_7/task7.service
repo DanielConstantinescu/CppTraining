@@ -1,0 +1,10 @@
+Description=Task7
+Wants=network.target
+
+[Service]
+WorkingDirectory=/home/projectx/Training/CppTraining/Taskuri/Task_7
+Type=simple
+ExecStart=/home/projectx/Training/CppTraining/Taskuri/Task_7/starupCon.sh
+
+[Install]
+WantedBy=default.target

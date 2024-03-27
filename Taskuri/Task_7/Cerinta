@@ -1,0 +1,4 @@
+Task 7: 
+
+sa se implementeze un bash script care la start-up sa porneasca serveul si cleintul implementate in taskul 5.
+Scriptul trebuie apelat in mod automat la start-up de sistemul de operare.
