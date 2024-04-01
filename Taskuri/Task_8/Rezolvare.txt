@@ -1,0 +1,9 @@
+PAS 1: Am creat fisierul UnitTests.cpp in care am inclus testele
+
+PAS 2: Am creat executabilul folosind comanda:
+
+g++ UnitTests.cpp -o UnitTests -lboost_unit_test_framework
+
+PAS 3: Am rulat folosind:
+
+./UnitTests --log_level=message
