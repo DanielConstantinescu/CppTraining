@@ -1,0 +1,8 @@
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/main.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/edit_cache.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/Utils.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/rebuild_cache.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/Tesla.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/Renault.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/Electric.dir
+/home/projectx/Training/CppTraining/Taskuri/Task_10/build/CMakeFiles/Petroleum.dir

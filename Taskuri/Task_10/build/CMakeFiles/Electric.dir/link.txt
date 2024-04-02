@@ -1,0 +1,2 @@
+/usr/bin/ar qc libElectric.a  CMakeFiles/Electric.dir/Electric.cpp.o
+/usr/bin/ranlib libElectric.a

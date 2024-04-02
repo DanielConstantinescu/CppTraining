@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTesla.a  CMakeFiles/Tesla.dir/Tesla.cpp.o CMakeFiles/Tesla.dir/Electric.cpp.o
+/usr/bin/ranlib libTesla.a
