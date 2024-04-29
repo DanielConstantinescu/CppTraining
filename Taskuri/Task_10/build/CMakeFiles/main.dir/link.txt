@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/Tesla.cpp.o CMakeFiles/main.dir/Renault.cpp.o CMakeFiles/main.dir/Utils.cpp.o  -o main  libPetroleum.a libElectric.a libRenault.a libTesla.a libUtils.a 

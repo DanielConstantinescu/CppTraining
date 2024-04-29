@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRenault.a  CMakeFiles/Renault.dir/Renault.cpp.o CMakeFiles/Renault.dir/Petroleum.cpp.o
+/usr/bin/ranlib libRenault.a

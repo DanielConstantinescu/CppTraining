@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/projectx/Training/CppTraining/Taskuri/Task_10/Electric.cpp
+Electric.h
+/home/projectx/Training/CppTraining/Taskuri/Task_10/Electric.h
+Vehicle.h
+/home/projectx/Training/CppTraining/Taskuri/Task_10/Vehicle.h
+iostream
+-
+
+/home/projectx/Training/CppTraining/Taskuri/Task_10/Electric.h
+Vehicle.h
+/home/projectx/Training/CppTraining/Taskuri/Task_10/Vehicle.h
+
+/home/projectx/Training/CppTraining/Taskuri/Task_10/Vehicle.h
+
